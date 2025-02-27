@@ -5,17 +5,20 @@ import Options from './components/Options/Options';
 import './App.css';
 
 const App = () => {
-  const [clicks, setClicks] = useState(0);
+  const [data, setData] = useState({ good: 0, neutral: 0, bad: 0 });
 
-  const goodClick = () => {
-    setClicks(clicks + 1);
+  const update = key => {
+    setData({
+      ...data,
+      [key]: data[key] + 1,
+    });
   };
 
   return (
     <>
       <Description />
-      <Feedback count={clicks} />
-      <Options onUpdate={goodClick} />
+      <Feedback data={data} />
+      <Options onUpdate={update} />
     </>
   );
 };

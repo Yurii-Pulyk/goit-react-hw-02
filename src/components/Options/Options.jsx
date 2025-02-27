@@ -1,10 +1,10 @@
 export default function Options({ onUpdate }) {
   return (
-    <section>
-      <button onClick={onUpdate}>Good </button>
-      <button>Neutral</button>
-      <button>Bad</button>
+    <div>
+      <button onClick={() => onUpdate('good')}>Good</button>
+      <button onClick={() => onUpdate('neutral')}>Neutral</button>
+      <button onClick={() => onUpdate('bad')}>Bad</button>
       <button>Reset</button>
-    </section>
+    </div>
   );
 }

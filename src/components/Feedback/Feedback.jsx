@@ -1,13 +1,18 @@
-export default function Feedback({ count }) {
-  return (
-    // const totalFeedback = good + neutral + bad;
+export default function Feedback({ data }) {
+  const totalFeedback = data.good + data.neutral + data.bad;
+  const positivePercentage = totalFeedback
+    ? ((data.good / totalFeedback) * 100).toFixed(1) + '%'
+    : '0%';
 
+  return totalFeedback > 0 ? (
     <section>
-      <p>Good:{count}</p>
-      <p>Neutral:</p>
-      <p>Bad:</p>
-      <p>Total: {count}</p>
-      <p>Positive:</p>
+      <p>Good: {data.good}</p>
+      <p>Neutral: {data.neutral}</p>
+      <p>Bad: {data.bad}</p>
+      <p>Total: {totalFeedback}</p>
+      <p>Positive: {positivePercentage}</p>
     </section>
+  ) : (
+    <p>No feedback yet</p>
   );
 }
