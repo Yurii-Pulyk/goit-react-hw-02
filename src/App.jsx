@@ -23,12 +23,11 @@ const App = () => {
   return (
     <>
       <Description />
-      <Feedback data={data} />
+      <Feedback data={data} totalFeedback={totalFeedback} />
       <Options
         onUpdate={update}
         onReset={reset}
         totalFeedback={totalFeedback}
-        t
       />
     </>
   );

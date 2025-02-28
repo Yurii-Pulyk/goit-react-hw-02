@@ -1,5 +1,5 @@
-export default function Feedback({ data }) {
-  const totalFeedback = data.good + data.neutral + data.bad;
+export default function Feedback({ data, totalFeedback }) {
+  //   const totalFeedback = data.good + data.neutral + data.bad;
   const positivePercentage = totalFeedback
     ? ((data.good / totalFeedback) * 100).toFixed(1) + '%'
     : '0%';
