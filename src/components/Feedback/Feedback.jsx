@@ -1,3 +1,4 @@
+import Notification from './Notification';
 export default function Feedback({ data, totalFeedback }) {
   //   const totalFeedback = data.good + data.neutral + data.bad;
   const positivePercentage = totalFeedback
@@ -13,6 +14,6 @@ export default function Feedback({ data, totalFeedback }) {
       <p>Positive: {positivePercentage}</p>
     </section>
   ) : (
-    <p>No feedback yet</p>
+    <Notification />
   );
 }
